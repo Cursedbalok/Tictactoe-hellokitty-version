@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Kitty Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hello Kitty Tic Tac Toe</h1>
+        <div class="caption">
+            <p>💖 For My Pookie Bear Tuba Chan 💖</p>
+        </div>
+        <div class="difficulty">
+            <label for="difficulty">Choose Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="board" id="board"></div>
+        <button id="reset" class="reset-button">Reset Game</button>
+        <div class="credits">
+            <p>👨‍💻 Created by Mohammad Emon 👨‍💻</p>
+        </div>
+        <div class="score-board">
+            <p id="scoreX">Player X: 0</p>
+            <p id="scoreO">Player O: 0</p>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <p id="modal-message"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

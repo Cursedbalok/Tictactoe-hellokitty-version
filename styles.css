@@ -1,0 +1,209 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffebee;
+    color: #d81b60;
+    text-align: center;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 5px solid #f50057;
+    border-radius: 15px;
+    background-size: cover;
+    transition: transform 0.3s; /* Add transition for container */
+    background-color: #ffebee;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.caption, .credits {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 2px solid #d81b60;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.cell:hover {
+    background-color: #f8bbd0;
+    transform: scale(1.1);
+}
+
+.cell.winning {
+    background-color: #ffccbc;
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for button */
+}
+
+.reset-button:hover {
+    background-color: #f50057; /* Change color on hover */
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.score-board {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: fadeIn 0.5s; /* Fade-in animation */
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #d81b60;
+    border-radius: 10px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s; /* Slide-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #d81b60;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal p {
+    font-size: 1.5em;
+    color: #d81b60;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust width for tablets */
+        transform: scale(1.02); /* Slight scaling effect on container */
+    }
+
+    h1 {
+        font-size: 1.8em; /* Smaller font for headings */
+    }
+
+    .caption, .credits, .score-board {
+        font-size: 1em; /* Smaller font for captions and scores */
+    }
+
+    .cell {
+        width: 80px; /* Adjust cell size for smaller devices */
+        height: 80px;
+        font-size: 2em; /* Smaller font for cell content */
+    }
+
+    .reset-button {
+        padding: 8px 16px; /* Adjust button size */
+        font-size: 0.9em; /* Smaller button font */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5em; /* Even smaller font for small devices */
+    }
+
+    .caption, .credits, .score-board {
+        font-size: 0.9em; /* Further reduce font size */
+    }
+
+    .cell {
+        width: 70px; /* Even smaller cell size */
+        height: 70px;
+        font-size: 1.8em; /* Reduce cell font size */
+    }
+
+    .reset-button {
+        padding: 6px 12px; /* Smaller button padding */
+        font-size: 0.8em; /* Further reduce button font */
+    }
+
+    .modal-content {
+        width: 95%; /* Responsive modal width */
+    }
+}
+
+/* Keyframes for Modal Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
